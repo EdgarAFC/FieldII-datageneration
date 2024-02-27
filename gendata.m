@@ -2,7 +2,7 @@ clear all, close all, clc
 % addpath('E:/Itamar_LIM/Field_II_ver_3_30_windows/')
 addpath('/nfs/privileged/edgar/Field_II_ver_3_30_linux/')
 
-nsimus = 1; %25000
+nsimus = 12500; %25000
 possible_r = [2, 3, 4, 6, 8]/1000;
 possible_c = 1420:10:1600;
 possible_latpos = (-16:2:16)/1000;
