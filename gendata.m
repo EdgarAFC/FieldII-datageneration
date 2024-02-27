@@ -11,7 +11,7 @@ possible_axpos = (40:2.5:70)/1000;
 % savedir = 'E:/Itamar_LIM/datasets/simulatedCystDataset/raw_0.0Att_75angles/';
 savedir = '/nfs/privileged/edgar/datasets/raw_0.0Att_75angles/';
 
-file_path = [savedir 'random_positions.h5'];
+file_path = ['/nfs/privileged/edgar/Docs/' 'random_positions.h5'];
 randpos_r = h5read(file_path, '/r');
 randpos_c = h5read(file_path, '/c');
 randpos_latpos = h5read(file_path, '/latpos');
