@@ -35,7 +35,7 @@ randpos_axpos = h5read(file_path, '/axpos');
 M = 3;
 elapsed = 0;
 
-parfor (idx_simu = 142:144,M)
+for idx_simu = 145:145
     % Get phantom and cyst parameters
     r = possible_r(randpos_r(idx_simu));
     c = possible_c(randpos_c(idx_simu));
