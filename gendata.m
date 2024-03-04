@@ -32,7 +32,9 @@ randpos_axpos = h5read(file_path, '/axpos');
 % h5write([savedir 'random_positions.h5'], '/latpos', randpos_latpos)
 % h5write([savedir 'random_positions.h5'], '/axpos', randpos_axpos)
 
-for idx_simu = 1:nsimus
+M = 2;
+
+parfor (idx_simu = 140:141,M)
     % Get phantom and cyst parameters
     r = possible_r(randpos_r(idx_simu));
     c = possible_c(randpos_c(idx_simu));
@@ -59,6 +61,7 @@ for idx_simu = 1:nsimus
     num_elem    = 128;              % Number of elements
     focus_rx    = [0 0 10000]/1000; % Electronic focus for rx transducer
     angles      = -16:32/(75-1):16;
+    %angles      = 0;
     num_sub_x    = 1;
     num_sub_y    = 5;
 
@@ -85,6 +88,12 @@ for idx_simu = 1:nsimus
     % Scatters per angle
     signals = {};
     max_nsamples = 0;
+
+    tx_focus_arr=zeros(length(angles),3);
+    signals_cell={};
+    time_zero_arr=zeros(1,length(angles));
+    
+    
     for idx_angle = 1:length(angles)
         tic;
         % Set angle and create rotated focus
@@ -139,7 +148,11 @@ for idx_simu = 1:nsimus
     % Saving info
     filename = [savedir str_param '.mat'];
     cell_var = {fc, fs,ele_pos, r, c, lat_pos, ax_pos, signals_arr, time_zero_arr, tx_focus_arr};
-    save(filename, 'cell_var')
-%     parsave(filename, cell_var)
+    %save(filename, 'cell_var')
+    parsave(filename, cell_var)
     
+end
+
+function parsave(fname, cell_var)
+  save(fname, 'cell_var')
 end
