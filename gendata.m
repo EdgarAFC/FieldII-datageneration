@@ -32,9 +32,10 @@ randpos_axpos = h5read(file_path, '/axpos');
 % h5write([savedir 'random_positions.h5'], '/latpos', randpos_latpos)
 % h5write([savedir 'random_positions.h5'], '/axpos', randpos_axpos)
 
-M = 2;
+M = 3;
+elapsed = 0;
 
-parfor (idx_simu = 140:141,M)
+parfor (idx_simu = 142:144,M)
     % Get phantom and cyst parameters
     r = possible_r(randpos_r(idx_simu));
     c = possible_c(randpos_c(idx_simu));
@@ -92,10 +93,10 @@ parfor (idx_simu = 140:141,M)
     tx_focus_arr=zeros(length(angles),3);
     signals_cell={};
     time_zero_arr=zeros(1,length(angles));
-    
-    
+    elapsed = 0;
+  
     for idx_angle = 1:length(angles)
-        tic;
+        start=tic;
         % Set angle and create rotated focus
         angle = angles(idx_angle);
         fprintf('\t%d)\t%s°\t\t', idx_angle, num2str(angle))
@@ -126,14 +127,15 @@ parfor (idx_simu = 140:141,M)
             max_nsamples=nsamples;
         end
 
-        toc
-%         fprintf('\t\t%s seconds\n', num2str(tElapsed))
+        Telapsed = toc(start);
+        elapsed = elapsed + Telapsed;
+        fprintf('\t\t%s seconds\n', num2str(Telapsed))
 
     end
     xdc_free(ThRx)
     field_end
     fprintf('Simulation %.5d is done\n', idx_simu)
-    
+    fprintf('%s seconds\n', num2str(elapsed))
 
     % Data structure to be saved
     fprintf('Creating data structures to be saved\n')
