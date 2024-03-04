@@ -32,10 +32,10 @@ randpos_axpos = h5read(file_path, '/axpos');
 % h5write([savedir 'random_positions.h5'], '/latpos', randpos_latpos)
 % h5write([savedir 'random_positions.h5'], '/axpos', randpos_axpos)
 
-M = 2;
+M = 3;
 elapsed = 0;
 
-parfor (idx_simu = 146:147,M)
+parfor (idx_simu = 148:150,M)
     % Get phantom and cyst parameters
     r = possible_r(randpos_r(idx_simu));
     c = possible_c(randpos_c(idx_simu));
