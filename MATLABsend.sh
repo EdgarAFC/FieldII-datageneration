@@ -3,7 +3,7 @@
 #SBATCh --nodes=1
 #SBATCH --partition=thinkstation-p340
 #SBATCH --nodelist=worker7
-#SBATCH --output="log.out"
+#SBATCH --output="log1.out"
 
 srun matlab -nosplash -nodesktop -nodisplay -r "gendata; exit"
 
