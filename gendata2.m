@@ -1,6 +1,6 @@
 clear all, close all, clc
 % addpath('E:/Itamar_LIM/Field_II_ver_3_30_windows/')
-addpath('/nfs/privileged/edgar/Field_II_ver_3_30_linux/')
+addpath('/mnt/nfs/efernandez/Field_II_ver_3_30_linux/')
 
 nsimus = 12500; %25000
 possible_r = [2, 3, 4, 6, 8]/1000;
@@ -9,9 +9,9 @@ possible_latpos = (-16:2:16)/1000;
 possible_axpos = (40:2.5:70)/1000;
 
 % savedir = 'E:/Itamar_LIM/datasets/simulatedCystDataset/raw_0.0Att_75angles/';
-savedir = '/nfs/privileged/edgar/datasets/raw_0.0Att_75angles/';
+savedir = '/mnt/nfs/efernandez/datasets/raw_0.0Att_75angles/';
 
-file_path = ['/nfs/privileged/edgar/Docs/' 'random_positions.h5'];
+file_path = ['/mnt/nfs/efernandez/Docs/' 'random_positions.h5'];
 randpos_r = h5read(file_path, '/r');
 randpos_c = h5read(file_path, '/c');
 randpos_latpos = h5read(file_path, '/latpos');
@@ -35,7 +35,7 @@ randpos_axpos = h5read(file_path, '/axpos');
 M = 2;
 elapsed = 0;
 
-parfor (idx_simu = 501:502,M)
+parfor (idx_simu = 501:550,M)
     % Get phantom and cyst parameters
     r = possible_r(randpos_r(idx_simu));
     c = possible_c(randpos_c(idx_simu));
