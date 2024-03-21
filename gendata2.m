@@ -9,7 +9,7 @@ possible_latpos = (-16:2:16)/1000;
 possible_axpos = (40:2.5:70)/1000;
 
 % savedir = 'E:/Itamar_LIM/datasets/simulatedCystDataset/raw_0.0Att_75angles/';
-savedir = '/mnt/nfs/efernandez/datasets/raw_0.0Att_75angles/';
+savedir = '/mnt/nfs/efernandez/datasets/data75PW/raw_0.0Att_75angles/';
 
 file_path = ['/mnt/nfs/efernandez/Docs/' 'random_positions.h5'];
 randpos_r = h5read(file_path, '/r');
