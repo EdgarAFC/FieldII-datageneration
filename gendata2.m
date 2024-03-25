@@ -32,7 +32,7 @@ randpos_axpos = h5read(file_path, '/axpos');
 % h5write([savedir 'random_positions.h5'], '/latpos', randpos_latpos)
 % h5write([savedir 'random_positions.h5'], '/axpos', randpos_axpos)
 
-M = 2;
+M = 12;
 elapsed = 0;
 
 parfor (idx_simu = 501:550,M)
