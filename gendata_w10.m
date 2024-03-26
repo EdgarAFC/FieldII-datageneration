@@ -37,7 +37,7 @@ elapsed = 0;
 
 %parpool('local');
 
-parfor (idx_simu = 751:850,M)
+parfor (idx_simu = 1001:1200,M)
     % Get phantom and cyst parameters
     r = possible_r(randpos_r(idx_simu));
     c = possible_c(randpos_c(idx_simu));
