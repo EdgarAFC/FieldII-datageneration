@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 #SBATCH --gpus-per-node=1
 #SBATCh --nodes=1
-#SBATCH --partition=thinkstation-p340
-#SBATCH --nodelist=worker7
-#SBATCH --output="log1.out"
+#SBATCH --partition=thinkstation-p360
+#SBATCH --nodelist=worker8
+#SBATCH --output="log_gen_h5.out"
 
 srun matlab -nosplash -nodesktop -nodisplay -r "gendata; exit"
 
