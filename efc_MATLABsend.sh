@@ -5,5 +5,4 @@
 #SBATCH --nodelist=worker9
 #SBATCH --output="log_get_h5.out"
 
-srun matlab -nosplash -nodesktop -nodisplay -r "gendata; exit"
-
+srun matlab -nosplash -nodesktop -nodisplay -r "getting_h5; exit"
