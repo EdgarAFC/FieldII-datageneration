@@ -10,7 +10,7 @@ for i = 4:1003
  
     file_name = dir_list(i).name;
     folder_name = dir_list(i).folder;
-    cell=load(strcat(folder_name,'\',file_name));
+    cell=load(strcat(folder_name,'/',file_name));
 
     fc=cell.cell_var{1,1};
     fs=cell.cell_var{1,2};
