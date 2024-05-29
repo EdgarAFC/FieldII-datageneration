@@ -6,7 +6,7 @@ close all
 dir_list = dir('/mnt/nfs/efernandez/datasets/data75PW/raw_0.0Att_75angles/');
 
 first_id = 1;
-for i = 1004:2003
+for i = 2004:3003
  
     file_name = dir_list(i).name;
     folder_name = dir_list(i).folder;
@@ -36,7 +36,7 @@ for i = 1004:2003
     end
     first_id = 0;
 
-    filename = [savedir 'simus_01001-02000.h5'];
+    filename = [savedir 'simus_02001-03000.h5'];
     
     h5create(filename, [simu_counter '/fc'], size(fc))
     h5create(filename, [simu_counter '/fs'], size(fs))
