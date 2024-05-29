@@ -36,7 +36,7 @@ for i = 3004:4003
     end
     first_id = 0;
 
-    filename = [savedir 'simus_02001-03000.h5'];
+    filename = [savedir 'simus_03001-04000.h5'];
     
     h5create(filename, [simu_counter '/fc'], size(fc))
     h5create(filename, [simu_counter '/fs'], size(fs))
