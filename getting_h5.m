@@ -6,7 +6,7 @@ close all
 dir_list = dir('/mnt/nfs/efernandez/datasets/data75PW/raw_0.0Att_75angles/');
 
 first_id = 1;
-for i = 2004:3003
+for i = 3004:4003
  
     file_name = dir_list(i).name;
     folder_name = dir_list(i).folder;
